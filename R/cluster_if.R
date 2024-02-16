@@ -4,7 +4,7 @@
 #' @param rmv Number of numbers to remove at the end of the data. IF data from the BCB usually has summary variables at the end. Check the data before runing the function to verify.
 #' @param column_to_cluster The name of the column in the data set to cluster, for example: "Ativo Total"
 #'
-#' @return A tibble with column containing the data clusters and a graph showing the mean and confidence Intervals for each cluster
+#' @return A tibble with a column containing the data clusters and a graph showing the mean and confidence Intervals for each cluster
 #' @export
 #'
 #' @examples

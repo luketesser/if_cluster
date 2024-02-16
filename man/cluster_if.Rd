@@ -14,7 +14,7 @@ cluster_if(data_path, rmv, column_to_cluster)
 \item{column_to_cluster}{The name of the column in the data set to cluster, for example: "Ativo Total"}
 }
 \value{
-A tibble with column containing the data clusters and a graph showing the mean and confidence Intervals for each cluster
+A tibble with a column containing the data clusters and a graph showing the mean and confidence Intervals for each cluster
 }
 \description{
 cluster_if
