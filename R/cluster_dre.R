@@ -9,7 +9,7 @@
 #'
 #' @examples
 #'
-#' clustered_data <- cluster_if(data_path = "Data/if_dre_2023_06.csv", rmv = 40, column_to_cluster = "Resultado antes da Tributação, Lucro e Participação (g) = (e) + (f)")
+#' clustered_data <- cluster_dre(data_path = "Data/if_dre_2023_06.csv", rmv = 40, column_to_cluster = "Resultado antes da Tributação, Lucro e Participação (g) = (e) + (f)")
 #'
 
 cluster_dre <- function(data_path, rmv, column_to_cluster){
@@ -48,7 +48,7 @@ cluster_dre <- function(data_path, rmv, column_to_cluster){
     ggplot2::ggplot(ggplot2::aes(x = cluster, y = value, color = variable, group = variable)) +
     ggplot2::geom_point() +
     ggplot2::geom_errorbar(ggplot2::aes(ymin = ifelse(variable == "ci_low", value, NA), ymax = ifelse(variable == "ci_up", value, NA), width = .4, )) +
-    ggplot2::labs(x = "Cluster", y = NULL, color = "Variable", title = "Mean and Confidence Intervals for Each Cluster") +
+    ggplot2::labs(x = "Cluster", y = NULL, color = "Variable", title = paste("Mean and Confidence Intervals for Each Cluster", column_to_cluster,sep = " - ")) +
     ggplot2::theme_minimal()
 
   print(plot)
